@@ -127,23 +127,23 @@ class TestRoutes(VCRTestCase):
             b"Thank you for your contribution", thank_you_response.data
         )
 
-    def test_advantage(self):
-        """
-        When given the advantage URL,
-        we should return a 200 status code
+    # def test_advantage(self):
+    #     """
+    #     When given the advantage URL,
+    #     we should return a 200 status code
 
-        When logged in, we should still get a 200 status code
-        """
+    #     When logged in, we should still get a 200 status code
+    #     """
 
-        self.assertEqual(self.client.get("/pro").status_code, 200)
+    #     self.assertEqual(self.client.get("/pro").status_code, 200)
 
-    def test_ceph(self):
-        """
-        When given the ceph docs URL,
-        we should return a 200 status code
-        """
+    # def test_ceph(self):
+    #     """
+    #     When given the ceph docs URL,
+    #     we should return a 200 status code
+    #     """
 
-        self.assertEqual(self.client.get("/ceph").status_code, 200)
+    #     self.assertEqual(self.client.get("/ceph").status_code, 200)
 
     def test_ceph_docs(self):
         """

@@ -4,7 +4,8 @@ import datetime
 import calendar
 import logging
 import json
-import numpy
+
+# import numpy
 from urllib.parse import parse_qs, urlencode
 
 # Packages

@@ -190,9 +190,9 @@ def ubuntu_release_meta():
             ):
                 continue
 
-            version_id_parts = release_data["Version"].removesuffix(
-                " LTS"
-            ).split(".")[:2]
+            version_id_parts = (
+                release_data["Version"].removesuffix(" LTS").split(".")[:2]
+            )
             release_data["Version"] = ".".join(version_id_parts)
             release_data["VersionTuple"] = tuple(
                 int(part) for part in version_id_parts

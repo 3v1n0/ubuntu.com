@@ -56,100 +56,101 @@ from webapp.security.views import (
     single_notices_sitemap,
     vulnerabilities_sitemap,
 )
-from webapp.shop.advantage.views import (
-    accept_renewal,
-    activate_magic_attach,
-    advantage_account_users_view,
-    advantage_shop_view,
-    advantage_view,
-    blender_shop_view,
-    cancel_advantage_subscriptions,
-    cancel_trial,
-    delete_account_user_role,
-    get_account_offers,
-    get_account_users,
-    get_activate_view,
-    get_advantage_offers,
-    get_annotated_subscriptions,
-    get_channel_offers,
-    get_contract_token,
-    get_distributor_thank_you_view,
-    get_distributor_view,
-    get_renewal,
-    get_user_subscriptions,
-    magic_attach_view,
-    post_account_user_role,
-    post_advantage_purchase,
-    post_auto_renewal_settings,
-    post_offer,
-    pro_activate_activation_key,
-    pro_get_request_attributes,
-    pro_page_view,
-    put_account_user_role,
-    put_contract_entitlements,
-)
-from webapp.shop.cred.views import (
-    activate_activation_key,
-    confidentiality_agreement_webhook,
-    cred_assessments,
-    cred_beta_activation,
-    cred_cancel_exam,
-    cred_dashboard,
-    cred_dashboard_upcoming_exams,
-    cred_dashboard_exam_results,
-    cred_dashboard_system_statuses,
-    cred_exam,
-    cred_home,
-    cred_manage_shop,
-    cred_redeem_code,
-    cred_schedule,
-    cred_self_study,
-    cred_shop,
-    cred_shop_keys,
-    cred_shop_thank_you,
-    cred_shop_webhook_responses,
-    cred_sign_up,
-    cred_thank_you,
-    cred_submit_form,
-    cred_syllabus_data,
-    cred_your_exams,
-    get_activation_key_info,
-    cred_user_ban,
-    get_activation_keys,
-    get_cue_products,
-    get_issued_badges,
-    get_issued_badges_bulk,
-    get_test_taker_stats,
-    issue_credly_badge,
-    get_cred_user_permissions,
-    get_my_issued_badges,
-    get_webhook_response,
-    issue_badges,
-    rotate_activation_key,
-    cancel_scheduled_exam,
-    cred_faq,
-)
-from webapp.shop.views import (
-    account_view,
-    checkout,
-    delete_payment_method,
-    download_invoice,
-    ensure_purchase_account,
-    get_customer_info,
-    get_last_purchase_ids,
-    get_purchase,
-    get_purchase_account_status,
-    get_shop_status_page,
-    invoices_view,
-    maintenance_check,
-    payment_methods_view,
-    post_anonymised_customer_info,
-    post_customer_info,
-    post_payment_methods,
-    post_purchase_calculate,
-    post_retry_purchase,
-    support,
-)
+
+# from webapp.shop.advantage.views import (
+#     accept_renewal,
+#     activate_magic_attach,
+#     advantage_account_users_view,
+#     advantage_shop_view,
+#     advantage_view,
+#     blender_shop_view,
+#     cancel_advantage_subscriptions,
+#     cancel_trial,
+#     delete_account_user_role,
+#     get_account_offers,
+#     get_account_users,
+#     get_activate_view,
+#     get_advantage_offers,
+#     get_annotated_subscriptions,
+#     get_channel_offers,
+#     get_contract_token,
+#     get_distributor_thank_you_view,
+#     get_distributor_view,
+#     get_renewal,
+#     get_user_subscriptions,
+#     magic_attach_view,
+#     post_account_user_role,
+#     post_advantage_purchase,
+#     post_auto_renewal_settings,
+#     post_offer,
+#     pro_activate_activation_key,
+#     pro_get_request_attributes,
+#     pro_page_view,
+#     put_account_user_role,
+#     put_contract_entitlements,
+# )
+# from webapp.shop.cred.views import (
+#     activate_activation_key,
+#     confidentiality_agreement_webhook,
+#     cred_assessments,
+#     cred_beta_activation,
+#     cred_cancel_exam,
+#     cred_dashboard,
+#     cred_dashboard_upcoming_exams,
+#     cred_dashboard_exam_results,
+#     cred_dashboard_system_statuses,
+#     cred_exam,
+#     cred_home,
+#     cred_manage_shop,
+#     cred_redeem_code,
+#     cred_schedule,
+#     cred_self_study,
+#     cred_shop,
+#     cred_shop_keys,
+#     cred_shop_thank_you,
+#     cred_shop_webhook_responses,
+#     cred_sign_up,
+#     cred_thank_you,
+#     cred_submit_form,
+#     cred_syllabus_data,
+#     cred_your_exams,
+#     get_activation_key_info,
+#     cred_user_ban,
+#     get_activation_keys,
+#     get_cue_products,
+#     get_issued_badges,
+#     get_issued_badges_bulk,
+#     get_test_taker_stats,
+#     issue_credly_badge,
+#     get_cred_user_permissions,
+#     get_my_issued_badges,
+#     get_webhook_response,
+#     issue_badges,
+#     rotate_activation_key,
+#     cancel_scheduled_exam,
+#     cred_faq,
+# )
+# from webapp.shop.views import (
+#     account_view,
+#     checkout,
+#     delete_payment_method,
+#     download_invoice,
+#     ensure_purchase_account,
+#     get_customer_info,
+#     get_last_purchase_ids,
+#     get_purchase,
+#     get_purchase_account_status,
+#     get_shop_status_page,
+#     invoices_view,
+#     maintenance_check,
+#     payment_methods_view,
+#     post_anonymised_customer_info,
+#     post_customer_info,
+#     post_payment_methods,
+#     post_purchase_calculate,
+#     post_retry_purchase,
+#     support,
+# )
 from webapp.views import (
     BlogCustomGroup,
     BlogCustomTopic,
@@ -360,211 +361,211 @@ app.add_url_rule("/account.json", view_func=account_query)
 app.add_url_rule("/mirrors.json", view_func=mirrors_query)
 app.add_url_rule("/marketo/submit", view_func=marketo_submit, methods=["POST"])
 app.add_url_rule("/thank-you", view_func=thank_you)
-app.add_url_rule("/pro/activate", view_func=get_activate_view)
-app.add_url_rule(
-    "/pro/activate",
-    view_func=pro_activate_activation_key,
-    methods=["POST"],
-)
-app.add_url_rule("/navigation", view_func=navigation_nojs)
-app.add_url_rule("/pro/dashboard", view_func=advantage_view)
-app.add_url_rule("/pro/user-subscriptions", view_func=get_user_subscriptions)
-app.add_url_rule(
-    "/pro/subscriptions.json", view_func=get_annotated_subscriptions
-)
-app.add_url_rule(
-    "/pro/contracts/<contract_id>/token", view_func=get_contract_token
-)
-app.add_url_rule("/pro/users", view_func=advantage_account_users_view)
-app.add_url_rule(
-    "/pro/distributor/users", view_func=advantage_account_users_view
-)
-app.add_url_rule("/pro/account-users", view_func=get_account_users)
-app.add_url_rule(
-    "/pro/accounts/<account_id>/user",
-    view_func=post_account_user_role,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/pro/accounts/<account_id>/user",
-    view_func=put_account_user_role,
-    methods=["PUT"],
-)
-app.add_url_rule(
-    "/pro/accounts/<account_id>/user",
-    view_func=delete_account_user_role,
-    methods=["DELETE"],
-)
-app.add_url_rule("/pro/subscribe", view_func=advantage_shop_view)
-app.add_url_rule("/pro/subscribe/blender", view_func=blender_shop_view)
-app.add_url_rule(
-    "/pro/subscribe",
-    view_func=cancel_advantage_subscriptions,
-    methods=["DELETE"],
-)
-app.add_url_rule("/pro/offer", view_func=post_offer, methods=["POST"])
-app.add_url_rule(
-    "/pro/set-auto-renewal",
-    view_func=post_auto_renewal_settings,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/pro/renewals/<renewal_id>", view_func=get_renewal, methods=["GET"]
-)
-app.add_url_rule(
-    "/pro/trial/<account_id>",
-    view_func=cancel_trial,
-    methods=["DELETE"],
-)
+# app.add_url_rule("/pro/activate", view_func=get_activate_view)
+# app.add_url_rule(
+#     "/pro/activate",
+#     view_func=pro_activate_activation_key,
+#     methods=["POST"],
+# )
+# app.add_url_rule("/navigation", view_func=navigation_nojs)
+# app.add_url_rule("/pro/dashboard", view_func=advantage_view)
+# app.add_url_rule("/pro/user-subscriptions", view_func=get_user_subscriptions)
+# app.add_url_rule(
+#     "/pro/subscriptions.json", view_func=get_annotated_subscriptions
+# )
+# app.add_url_rule(
+#     "/pro/contracts/<contract_id>/token", view_func=get_contract_token
+# )
+# app.add_url_rule("/pro/users", view_func=advantage_account_users_view)
+# app.add_url_rule(
+#     "/pro/distributor/users", view_func=advantage_account_users_view
+# )
+# app.add_url_rule("/pro/account-users", view_func=get_account_users)
+# app.add_url_rule(
+#     "/pro/accounts/<account_id>/user",
+#     view_func=post_account_user_role,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/pro/accounts/<account_id>/user",
+#     view_func=put_account_user_role,
+#     methods=["PUT"],
+# )
+# app.add_url_rule(
+#     "/pro/accounts/<account_id>/user",
+#     view_func=delete_account_user_role,
+#     methods=["DELETE"],
+# )
+# app.add_url_rule("/pro/subscribe", view_func=advantage_shop_view)
+# app.add_url_rule("/pro/subscribe/blender", view_func=blender_shop_view)
+# app.add_url_rule(
+#     "/pro/subscribe",
+#     view_func=cancel_advantage_subscriptions,
+#     methods=["DELETE"],
+# )
+# app.add_url_rule("/pro/offer", view_func=post_offer, methods=["POST"])
+# app.add_url_rule(
+#     "/pro/set-auto-renewal",
+#     view_func=post_auto_renewal_settings,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/pro/renewals/<renewal_id>", view_func=get_renewal, methods=["GET"]
+# )
+# app.add_url_rule(
+#     "/pro/trial/<account_id>",
+#     view_func=cancel_trial,
+#     methods=["DELETE"],
+# )
 
-app.add_url_rule(
-    "/pro/renewals/<renewal_id>/process-payment",
-    view_func=accept_renewal,
-    methods=["POST"],
-)
+# app.add_url_rule(
+#     "/pro/renewals/<renewal_id>/process-payment",
+#     view_func=accept_renewal,
+#     methods=["POST"],
+# )
 
-app.add_url_rule(
-    "/pro/contracts/<contract_id>/entitlements",
-    view_func=put_contract_entitlements,
-    methods=["PUT"],
-)
+# app.add_url_rule(
+#     "/pro/contracts/<contract_id>/entitlements",
+#     view_func=put_contract_entitlements,
+#     methods=["PUT"],
+# )
 
-app.add_url_rule(
-    "/pro/offers",
-    view_func=get_advantage_offers,
-    methods=["GET"],
-)
+# app.add_url_rule(
+#     "/pro/offers",
+#     view_func=get_advantage_offers,
+#     methods=["GET"],
+# )
 
-app.add_url_rule(
-    "/pro/offers.json",
-    view_func=get_account_offers,
-    methods=["GET"],
-)
+# app.add_url_rule(
+#     "/pro/offers.json",
+#     view_func=get_account_offers,
+#     methods=["GET"],
+# )
 
-app.add_url_rule("/pro/distributor", view_func=get_distributor_view)
-app.add_url_rule("/pro/distributor/shop", view_func=get_distributor_view)
-app.add_url_rule(
-    "/pro/distributor/thank-you", view_func=get_distributor_thank_you_view
-)
-app.add_url_rule(
-    "/pro/channel-offers.json",
-    view_func=get_channel_offers,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/pro/attach", view_func=activate_magic_attach, methods=["POST"]
-)
-app.add_url_rule("/pro/attach", view_func=magic_attach_view, methods=["GET"])
-# shop
-app.add_url_rule(
-    "/account",
-    view_func=account_view,
-)
-app.add_url_rule(
-    "/account/<marketplace>/purchase-account-status",
-    view_func=get_purchase_account_status,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/account/invoices",
-    view_func=invoices_view,
-)
-app.add_url_rule("/pro/distributor/invoice", view_func=invoices_view)
-app.add_url_rule(
-    "/account/invoices/download/<purchase_id>",
-    view_func=download_invoice,
-)
-app.add_url_rule(
-    "/account/payment-methods",
-    view_func=payment_methods_view,
-)
-app.add_url_rule(
-    "/account/payment-methods",
-    view_func=post_payment_methods,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/account/payment-methods",
-    view_func=delete_payment_method,
-    methods=["DELETE"],
-)
-app.add_url_rule(
-    "/account/purchase-account",
-    view_func=ensure_purchase_account,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/account/customer-info/<account_id>",
-    view_func=get_customer_info,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/account/customer-info",
-    view_func=post_customer_info,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/account/customer-info-anon",
-    view_func=post_anonymised_customer_info,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/account/purchases/<purchase_id>",
-    view_func=get_purchase,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/account/purchases/<purchase_id>/retry",
-    view_func=post_retry_purchase,
-    methods=["POST"],
-)
-app.add_url_rule("/support", view_func=support)
-app.add_url_rule(
-    "/account/last-purchase-ids/<account_id>",
-    view_func=get_last_purchase_ids,
-)
-app.add_url_rule(
-    "/pro",
-    view_func=pro_page_view,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/pro/purchase",
-    view_func=post_advantage_purchase,
-    methods=["POST"],
-    defaults={"preview": False},
-)
-app.add_url_rule(
-    "/pro/purchase/preview",
-    view_func=post_advantage_purchase,
-    methods=["POST"],
-    defaults={"preview": True},
-)
-app.add_url_rule(
-    "/account/checkout",
-    view_func=checkout,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/account/<marketplace>/purchase/calculate",
-    view_func=post_purchase_calculate,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/pro/status",
-    view_func=get_shop_status_page,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/pro/maintenance-check",
-    view_func=maintenance_check,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/pro/request/attributes",
-    view_func=pro_get_request_attributes,
-    methods=["GET"],
-)
+# app.add_url_rule("/pro/distributor", view_func=get_distributor_view)
+# app.add_url_rule("/pro/distributor/shop", view_func=get_distributor_view)
+# app.add_url_rule(
+#     "/pro/distributor/thank-you", view_func=get_distributor_thank_you_view
+# )
+# app.add_url_rule(
+#     "/pro/channel-offers.json",
+#     view_func=get_channel_offers,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/pro/attach", view_func=activate_magic_attach, methods=["POST"]
+# )
+# app.add_url_rule("/pro/attach", view_func=magic_attach_view, methods=["GET"])
+# # shop
+# app.add_url_rule(
+#     "/account",
+#     view_func=account_view,
+# )
+# app.add_url_rule(
+#     "/account/<marketplace>/purchase-account-status",
+#     view_func=get_purchase_account_status,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/account/invoices",
+#     view_func=invoices_view,
+# )
+# app.add_url_rule("/pro/distributor/invoice", view_func=invoices_view)
+# app.add_url_rule(
+#     "/account/invoices/download/<purchase_id>",
+#     view_func=download_invoice,
+# )
+# app.add_url_rule(
+#     "/account/payment-methods",
+#     view_func=payment_methods_view,
+# )
+# app.add_url_rule(
+#     "/account/payment-methods",
+#     view_func=post_payment_methods,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/account/payment-methods",
+#     view_func=delete_payment_method,
+#     methods=["DELETE"],
+# )
+# app.add_url_rule(
+#     "/account/purchase-account",
+#     view_func=ensure_purchase_account,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/account/customer-info/<account_id>",
+#     view_func=get_customer_info,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/account/customer-info",
+#     view_func=post_customer_info,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/account/customer-info-anon",
+#     view_func=post_anonymised_customer_info,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/account/purchases/<purchase_id>",
+#     view_func=get_purchase,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/account/purchases/<purchase_id>/retry",
+#     view_func=post_retry_purchase,
+#     methods=["POST"],
+# )
+# app.add_url_rule("/support", view_func=support)
+# app.add_url_rule(
+#     "/account/last-purchase-ids/<account_id>",
+#     view_func=get_last_purchase_ids,
+# )
+# app.add_url_rule(
+#     "/pro",
+#     view_func=pro_page_view,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/pro/purchase",
+#     view_func=post_advantage_purchase,
+#     methods=["POST"],
+#     defaults={"preview": False},
+# )
+# app.add_url_rule(
+#     "/pro/purchase/preview",
+#     view_func=post_advantage_purchase,
+#     methods=["POST"],
+#     defaults={"preview": True},
+# )
+# app.add_url_rule(
+#     "/account/checkout",
+#     view_func=checkout,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/account/<marketplace>/purchase/calculate",
+#     view_func=post_purchase_calculate,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/pro/status",
+#     view_func=get_shop_status_page,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/pro/maintenance-check",
+#     view_func=maintenance_check,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/pro/request/attributes",
+#     view_func=pro_get_request_attributes,
+#     methods=["GET"],
+# )
 
 # end of shop
 
@@ -980,164 +981,164 @@ app.add_url_rule(
 )
 
 # Credentials
-app.add_url_rule("/credentials", view_func=cred_home)
-app.add_url_rule("/credentials/self-study", view_func=cred_self_study)
-app.add_url_rule("/credentials/exam-content", view_func=cred_syllabus_data)
-app.add_url_rule("/credentials/faq", view_func=cred_faq)
-app.add_url_rule(
-    "/credentials/sign-up", view_func=cred_sign_up, methods=["GET", "POST"]
-)
-app.add_url_rule(
-    "/credentials/thank-you", view_func=cred_thank_you, methods=["GET"]
-)
-app.add_url_rule(
-    "/credentials/schedule",
-    view_func=cred_schedule,
-    methods=["GET", "POST"],
-)
-app.add_url_rule("/credentials/your-exams", view_func=cred_your_exams)
-app.add_url_rule("/credentials/cancel-exam", view_func=cred_cancel_exam)
-app.add_url_rule("/credentials/assessments", view_func=cred_assessments)
-app.add_url_rule("/credentials/exam", view_func=cred_exam)
-app.add_url_rule(
-    "/credentials/<string:type>/products",
-    view_func=get_cue_products,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/exit-survey",
-    view_func=cred_submit_form,
-    methods=["GET", "POST"],
-)
-app.add_url_rule("/credentials/shop/", view_func=cred_shop)
-app.add_url_rule(
-    "/credentials/shop/manage/", view_func=cred_manage_shop, methods=["GET"]
-)
-app.add_url_rule("/credentials/shop/<p>", view_func=cred_shop)
-app.add_url_rule("/credentials/shop/keys", view_func=cred_shop_keys)
-app.add_url_rule(
-    "/credentials/shop/order-thank-you", view_func=cred_shop_thank_you
-)
-app.add_url_rule(
-    "/credentials/shop/webhook_responses",
-    view_func=cred_shop_webhook_responses,
-)
-app.add_url_rule(
-    "/credentials/redeem", view_func=cred_redeem_code, methods=["GET", "POST"]
-)
-app.add_url_rule(
-    "/credentials/redeem/<code>",
-    view_func=cred_redeem_code,
-    methods=["GET", "POST"],
-)
-app.add_url_rule(
-    "/credentials/keys/list",
-    view_func=get_activation_keys,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/keys/rotate/<activation_key>",
-    view_func=rotate_activation_key,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/keys/activate",
-    view_func=activate_activation_key,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/credentials/keys/<key_id>",
-    view_func=get_activation_key_info,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/beta/activation",
-    view_func=cred_beta_activation,
-    methods=["GET", "POST"],
-)
-app.add_url_rule(
-    "/credentials/get_webhook_response",
-    view_func=get_webhook_response,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/assessment_passed",
-    view_func=issue_badges,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/credentials/dashboard",
-    view_func=cred_dashboard,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/dashboard/<path:path>",
-    view_func=cred_dashboard,
-    methods=["GET"],
-    defaults={"path": ""},
-)
-app.add_url_rule(
-    "/credentials/api/upcoming-exams",
-    view_func=cred_dashboard_upcoming_exams,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/api/exam-results",
-    view_func=cred_dashboard_exam_results,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/api/system-statuses",
-    view_func=cred_dashboard_system_statuses,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/api/issued-badges",
-    view_func=get_issued_badges,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/api/issued-badges-bulk",
-    view_func=get_issued_badges_bulk,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/api/test-taker-stats",
-    view_func=get_test_taker_stats,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/api/issue-credly-badge",
-    view_func=issue_credly_badge,
-    methods=["POST"],
-)
-app.add_url_rule(
-    "/credentials/api/user-permissions",
-    view_func=get_cred_user_permissions,
-    methods=["GET"],
-)
-app.add_url_rule(
-    "/credentials/api/cancel-scheduled-exam/<reservation_id>",
-    view_func=cancel_scheduled_exam,
-    methods=["DELETE"],
-)
-app.add_url_rule(
-    "/credentials/api/user-bans",
-    view_func=cred_user_ban,
-    methods=["GET", "PUT"],
-)
+# app.add_url_rule("/credentials", view_func=cred_home)
+# app.add_url_rule("/credentials/self-study", view_func=cred_self_study)
+# app.add_url_rule("/credentials/exam-content", view_func=cred_syllabus_data)
+# app.add_url_rule("/credentials/faq", view_func=cred_faq)
+# app.add_url_rule(
+#     "/credentials/sign-up", view_func=cred_sign_up, methods=["GET", "POST"]
+# )
+# app.add_url_rule(
+#     "/credentials/thank-you", view_func=cred_thank_you, methods=["GET"]
+# )
+# app.add_url_rule(
+#     "/credentials/schedule",
+#     view_func=cred_schedule,
+#     methods=["GET", "POST"],
+# )
+# app.add_url_rule("/credentials/your-exams", view_func=cred_your_exams)
+# app.add_url_rule("/credentials/cancel-exam", view_func=cred_cancel_exam)
+# app.add_url_rule("/credentials/assessments", view_func=cred_assessments)
+# app.add_url_rule("/credentials/exam", view_func=cred_exam)
+# app.add_url_rule(
+#     "/credentials/<string:type>/products",
+#     view_func=get_cue_products,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/exit-survey",
+#     view_func=cred_submit_form,
+#     methods=["GET", "POST"],
+# )
+# app.add_url_rule("/credentials/shop/", view_func=cred_shop)
+# app.add_url_rule(
+#     "/credentials/shop/manage/", view_func=cred_manage_shop, methods=["GET"]
+# )
+# app.add_url_rule("/credentials/shop/<p>", view_func=cred_shop)
+# app.add_url_rule("/credentials/shop/keys", view_func=cred_shop_keys)
+# app.add_url_rule(
+#     "/credentials/shop/order-thank-you", view_func=cred_shop_thank_you
+# )
+# app.add_url_rule(
+#     "/credentials/shop/webhook_responses",
+#     view_func=cred_shop_webhook_responses,
+# )
+# app.add_url_rule(
+#     "/credentials/redeem", view_func=cred_redeem_code, methods=["GET", "POST"]
+# )
+# app.add_url_rule(
+#     "/credentials/redeem/<code>",
+#     view_func=cred_redeem_code,
+#     methods=["GET", "POST"],
+# )
+# app.add_url_rule(
+#     "/credentials/keys/list",
+#     view_func=get_activation_keys,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/keys/rotate/<activation_key>",
+#     view_func=rotate_activation_key,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/keys/activate",
+#     view_func=activate_activation_key,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/credentials/keys/<key_id>",
+#     view_func=get_activation_key_info,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/beta/activation",
+#     view_func=cred_beta_activation,
+#     methods=["GET", "POST"],
+# )
+# app.add_url_rule(
+#     "/credentials/get_webhook_response",
+#     view_func=get_webhook_response,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/assessment_passed",
+#     view_func=issue_badges,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/credentials/dashboard",
+#     view_func=cred_dashboard,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/dashboard/<path:path>",
+#     view_func=cred_dashboard,
+#     methods=["GET"],
+#     defaults={"path": ""},
+# )
+# app.add_url_rule(
+#     "/credentials/api/upcoming-exams",
+#     view_func=cred_dashboard_upcoming_exams,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/api/exam-results",
+#     view_func=cred_dashboard_exam_results,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/api/system-statuses",
+#     view_func=cred_dashboard_system_statuses,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/api/issued-badges",
+#     view_func=get_issued_badges,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/api/issued-badges-bulk",
+#     view_func=get_issued_badges_bulk,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/api/test-taker-stats",
+#     view_func=get_test_taker_stats,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/api/issue-credly-badge",
+#     view_func=issue_credly_badge,
+#     methods=["POST"],
+# )
+# app.add_url_rule(
+#     "/credentials/api/user-permissions",
+#     view_func=get_cred_user_permissions,
+#     methods=["GET"],
+# )
+# app.add_url_rule(
+#     "/credentials/api/cancel-scheduled-exam/<reservation_id>",
+#     view_func=cancel_scheduled_exam,
+#     methods=["DELETE"],
+# )
+# app.add_url_rule(
+#     "/credentials/api/user-bans",
+#     view_func=cred_user_ban,
+#     methods=["GET", "PUT"],
+# )
 
-app.add_url_rule(
-    "/credentials/your-badges",
-    view_func=get_my_issued_badges,
-    methods=["GET"],
-)
+# app.add_url_rule(
+#     "/credentials/your-badges",
+#     view_func=get_my_issued_badges,
+#     methods=["GET"],
+# )
 
-app.add_url_rule(
-    "/credentials/confidentiality-agreement",
-    view_func=confidentiality_agreement_webhook,
-    methods=["POST"],
-)
+# app.add_url_rule(
+#     "/credentials/confidentiality-agreement",
+#     view_func=confidentiality_agreement_webhook,
+#     methods=["POST"],
+# )
 
 # Charmed OpenStack docs
 openstack_docs = Docs(
